@@ -1,21 +1,28 @@
 
 var validInputs = "abcdefghijklmnopqrstuvwxyz"; 
-var userInput = [];
+var computerGuess = computerGuess;
 var computerGuess = validInputs[Math.floor(Math.random() * validInputs.length)]; // Generates random letter
+var userInput = [];
 var win = 0; 
 var loss = 0;
 var guesses = 15;
 
-console.log(computerGuess);
+
+function compGuessMethod() {
+    computerGuess = validInputs[Math.floor(Math.random() * validInputs.length)]; // Generates random letter
+
+}
 
 document.onkeydown = function (input) {
     var userGuess = event.key; 
-
+    
     //if user guess is correct
     if (userGuess === computerGuess) {
         win++; 
         guesses = 15;
         loss = 0;
+        userInput = [];
+        compGuessMethod();
     }
 
     //if user guess is incorrect
@@ -23,7 +30,7 @@ document.onkeydown = function (input) {
         guesses--;
 
         if (userInput.includes(userGuess)) {
-            alert("You already tried that letter!");
+            //alert("You already tried that letter!");
         }
         userInput.push(userGuess);
     }
@@ -39,8 +46,7 @@ document.getElementById("loss").textContent = loss;
 document.getElementById("guesses").textContent = guesses;
 document.getElementById("tried").textContent = userInput;
 
-
 console.log(userGuess);
-
+console.log("computer guessed" + computerGuess);
 }
 
