@@ -39,6 +39,7 @@ document.onkeydown = function (input) {
     if (guesses === 0) {
         loss++;
         guesses = 15;
+        compGuessMethod();
     }
     
 document.getElementById("wins").textContent = win;
