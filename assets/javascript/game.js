@@ -1,6 +1,5 @@
 
 var validInputs = "abcdefghijklmnopqrstuvwxyz"; 
-var computerGuess = computerGuess;
 var computerGuess = validInputs[Math.floor(Math.random() * validInputs.length)]; // Generates random letter
 var userInput = [];
 var win = 0; 
