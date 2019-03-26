@@ -21,9 +21,9 @@ document.onkeydown = function (input) {
     //if user guess is incorrect
     else if (userGuess !== computerGuess) {
         guesses--;
-        
+
         if (userInput.includes(userGuess)) {
-            alert("Letter already tried");
+            alert("You already tried that letter!");
         }
         userInput.push(userGuess);
     }
