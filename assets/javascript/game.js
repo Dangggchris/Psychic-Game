@@ -38,6 +38,7 @@ document.onkeydown = function (input) {
     if (guesses === 0) {
         loss++;
         guesses = 15;
+        userInput = [];
         compGuessMethod();
     }
     
@@ -46,7 +47,7 @@ document.getElementById("loss").textContent = loss;
 document.getElementById("guesses").textContent = guesses;
 document.getElementById("tried").textContent = userInput;
 
-console.log(userGuess);
-console.log("computer guessed" + computerGuess);
+console.log("You guessed: " + userGuess);
+console.log("Computer guessed: " + computerGuess);
 }
 
