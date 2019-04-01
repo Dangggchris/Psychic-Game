@@ -19,19 +19,24 @@ document.onkeydown = function (input) {
     if (userGuess === computerGuess) {
         win++; 
         guesses = 15;
-        loss = 0;
         userInput = [];
+
+        // generate new letter
         compGuessMethod();
     }
 
-    //if user guess is incorrect
+    //if user guess not equal to computer. It will tell you if the key has been pressed and or it will push the letter into used guesses
     else if (userGuess !== computerGuess) {
-        guesses--;
+        
 
         if (userInput.includes(userGuess)) {
-            //alert("You already tried that letter!");
+            alert("You already tried that letter!");
         }
-        userInput.push(userGuess);
+        else { 
+            guesses--;
+            userInput.push(userGuess);
+            console.log(userInput);
+        }
     }
 
     //when user uses all guesses
@@ -39,6 +44,8 @@ document.onkeydown = function (input) {
         loss++;
         guesses = 15;
         userInput = [];
+
+        // generate new letter game
         compGuessMethod();
     }
     
